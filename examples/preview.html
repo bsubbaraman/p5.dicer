@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="../lib/p5.fab.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/p5-webserial@0.1.1/build/p5.webserial.js"></script>
+  </head>
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      margin: 0;
+      overscroll-behavior: none;
+    }
+  </style>
+  <body>
+    <script src="../lib/midi.js" type="module"></script>
+    <script defer>
+      addEventListener(
+        "DOMContentLoaded",
+        (e) => {
+          window.parent.postMessage({ type: "ready", body: "" });
+        },
+        { once: true }
+      );
+    </script>
+  </body>
+</html>
