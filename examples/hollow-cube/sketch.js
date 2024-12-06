@@ -21,6 +21,12 @@ function setup() {
     stopButton.mousePressed(function() {
       fab.stopPrint(); // stop streaming the commands to printer
     });
+
+    let exportButton = createButton('export!');
+    exportButton.position(20, 140);
+    exportButton.mousePressed(function() {
+      fab.exportGcode(); // export gcode to a file.
+    });
 }
 
 function fabDraw() {
