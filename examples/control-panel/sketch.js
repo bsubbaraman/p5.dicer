@@ -13,7 +13,7 @@ function fabDraw() {
 }
 
 function connectPrinter() {
-    fab.serial.requestPort();
+    fab.connectPrinter();
   }
 
 function bSend(dir) {

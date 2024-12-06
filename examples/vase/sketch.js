@@ -6,16 +6,28 @@ function setup() {
   fab = createFab();
 
   // add a buttons to connect to the printer & to print!
-  connectButton = createButton('connect!');
+  let connectButton = createButton('connect!');
   connectButton.position(20, 20);
   connectButton.mousePressed(function() {
     fab.serial.requestPort();
   });
 
-  printButton = createButton('print!');
+  let printButton = createButton('print!');
   printButton.position(20, 60);
   printButton.mousePressed(function() {
     fab.print();
+  });
+
+  let stopButton = createButton('stop!');
+  stopButton.position(20, 100);
+  stopButton.mousePressed(function() {
+    fab.stopPrint(); // stop streaming the commands to printer.
+  });
+
+  let exportButton = createButton('export!');
+  exportButton.position(20, 140);
+  exportButton.mousePressed(function() {
+    fab.exportGcode(); // export gcode to a file.
   });
 }
 

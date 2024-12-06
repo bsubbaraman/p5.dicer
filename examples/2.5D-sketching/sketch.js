@@ -10,16 +10,22 @@ function setup() {
     fab.serial.requestPort(); // choose the serial port to connect to
   });
 
-  let printButton = createButton("print!");
-  printButton.position(20, 60);
-  printButton.mousePressed(function () {
-    fab.print(); // start streaming the commands to printer
+  let startButton = createButton('start!');
+  startButton.position(20, 60);
+  startButton.mousePressed(function () {
+    fab.print(); // start streaming commands to printer
   });
 
-  let stopButton = createButton("stop!");
+  let stopButton = createButton('stop!');
   stopButton.position(20, 100);
   stopButton.mousePressed(function () {
     fab.stopPrint(); // stop streaming the commands to printer
+  });
+
+  let exportButton = createButton('export!');
+  exportButton.position(20, 140);
+  exportButton.mousePressed(function () {
+    fab.exportGcode(); // export gcode to a file.
   });
 }
 
@@ -52,6 +58,7 @@ function fabDraw() {
     r -= 0.1;
   }
   fab.presentPart();
+  //console.log(fab.commands);
 }
 
 function draw() {
